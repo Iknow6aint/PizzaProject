@@ -1,11 +1,28 @@
 <?php
 
 if(isset($_POST['sbumit'])){
-    echo htmlspecialchars ($_POST['email']);
-    echo htmlspecialchars($_POST['ingredients']);
-    echo htmlspecialchars($_POST['title']);
-}
+    //check email
+    if(empty($_POST['email'])){
+        echo 'An email is required <br />';
+    }else{
+        echo htmlspecialchars($_POST['title']);
+    }
 
+    //check title
+        if(empty($_POST['title'])){
+        echo 'An title is required <br />';
+    }else{
+        echo htmlspecialchars($_POST['title']);
+    }
+
+        if(empty($_POST['ingredients'])){
+        echo 'An ingredient is required <br />';
+    }else{
+        echo htmlspecialchars($_POST['ingredients']);
+    }
+
+
+}
 
 ?>
 
