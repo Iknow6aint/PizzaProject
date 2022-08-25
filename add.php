@@ -5,22 +5,31 @@ if(isset($_POST['sbumit'])){
     if(empty($_POST['email'])){
         echo 'An email is required <br />';
     }else{
-        echo htmlspecialchars($_POST['title']);
+        $email = $_POST['email'];
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+            echo 'EMAI must be valid';
+        }
     }
 
     //check title
         if(empty($_POST['title'])){
         echo 'An title is required <br />';
     }else{
-        echo htmlspecialchars($_POST['title']);
+        $title = $_POST['title'];
+        if(!preg_match('/^[a-zA-Z/s]+$/',$title)){
+            echo 'TItle must be letters and space only';
+        }
     }
 
         if(empty($_POST['ingredients'])){
         echo 'An ingredient is required <br />';
     }else{
-        echo htmlspecialchars($_POST['ingredients']);
+        $ingredients = $_POST['ingredients'];
+       if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
+				echo 'Ingredients must be a comma separated list';
+			}
     }
-
+ 
 
 }
 
