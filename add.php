@@ -18,7 +18,7 @@ $email = $title = $ingredients = '';
 		// check title
 		if(empty($_POST['title'])){
 			$errors['title'] = 'A title is required';
-		} else{
+		} else{ 
 			$title = $_POST['title'];
 			if(!preg_match('/^[a-zA-Z\s]+$/', $title)){
 				$errors['title'] = 'Title must be letters and spaces only';
