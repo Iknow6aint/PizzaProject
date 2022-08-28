@@ -35,8 +35,15 @@ $email = $title = $ingredients = '';
 			}
 		}
 
-	} // end POST check
+        if(array_filter($errors)){
+            //echo 'errors in the form'
+        }else{
+           // echo 'form is valid'
+           header('Location: index.php');
+        }
 
+
+	} // end POST check
 
 ?>
 
