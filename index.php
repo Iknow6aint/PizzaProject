@@ -1,12 +1,8 @@
 
 <?php
-//connncetDB
-$conn = mysqli_connect('localhost','iknowsaint','iknowsaint','pizza projeect');
 
-//check conneection
-if(!$conn){
-    echo 'connection error:' . mysqli_connect_error();
-}
+include('config/db_connect.php');
+
 //write query
 $sql = 'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
 
